@@ -1,0 +1,292 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Large Colored Title Article
+% LaTeX Template
+% Version 1.0 (15/8/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[DIV=calc, paper=a4, fontsize=10pt, twocolumn]{scrartcl}	 % A4 paper and 11pt font size
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+%\usepackage[english]{babel} % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{fix-cm}	 % Custom font sizes - used for the initial letter in the document
+
+\usepackage{sectsty} % Enables custom section titles
+%\allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
+
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+\pagestyle{fancy} % Enables the custom headers/footers
+\usepackage{lastpage} % Used to determine the number of pages in the document (for "Page X of Total")
+
+% Headers - all currently empty
+\lhead{}
+\chead{}
+\rhead{}
+
+% Footers
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}} % "Page 1 of 2"
+
+\renewcommand{\headrulewidth}{0.0pt} % No header rule
+\renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
+
+\usepackage{lettrine} % Package to accentuate the first letter of the text
+\newcommand{\initial}[1]{ % Defines the command and style for the first letter
+\lettrine[lines=3,lhang=0.3,nindent=0em]{
+\color{DarkGoldenrod}
+{\textsf{#1}}}{}}
+
+
+\usepackage{enumerate}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{xgreek}
+
+%SET THE FONTS HERE
+\setmainfont[Mapping=tex-text]{Open Sans}
+\setsansfont[Mapping=tex-text]{Open Sans}
+\setmonofont[Mapping=tex-text]{Open Sans}
+
+%CREATE A N W ENVIRONMENT FOR ITEMIZE & ENUMERATION TO SAVE SPACE
+\newenvironment{packed_item}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+ \setlength{\itemsep}{0pt}
+ \setlength{\parsep}{0pt}
+ \setlength{\topsep}{0pt}
+ \setlength{\partopsep}{0pt}
+ \setlength{\leftmargin}{0.5em}
+ \setlength{\labelwidth}{0.5em}
+ \setlength{\labelsep}{0.5em} 
+}{\end{enumerate}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{\footnotesize {Τίτλος} }
+\lfoot{\footnotesize {\copyright  Όνομα Επώνυμο}}
+\cfoot{}
+\rhead{\footnotesize {\textbf{Υπότιτλος} :  \today}}
+%\cfoot{\footnotesize \today}
+\rfoot{\footnotesize Σελίδα \thepage\ από \pageref{LastPage}}
+\renewcommand{\headheight}{24pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%\renewcommand\headrule{\vspace{-8pt}}
+%\setlanguage{monogreek}
+
+%\usepackage[utf8x]{inputenc}
+%\usepackage[greek]{babel}
+\usepackage{listings}
+%\lstloadlanguages{C}
+\lstdefinelanguage{rock}
+{morekeywords={if, elif, done, else, in, fi, case, esac, then, for , do, while, until, break, select, continue},
+sensitive=false,
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},
+morestring=[b]",
+}
+\lstset{language=rock,commentstyle=\scriptsize,frameround=fttt,basicstyle=\ttfamily,}
+%rg
+\usepackage{color}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+	backgroundcolor=,
+	tabsize=4,
+	rulecolor=,
+	language=rock,
+        upquote=true,
+        aboveskip={1.0\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=false,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=lines,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+	basicstyle=\scriptsize,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\usepackage{lastpage}
+\usepackage{epigraph}
+
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{10pt}{10pt}{5pt}
+\usepackage{verbatim} 
+
+\usepackage{tabularx}
+
+\usepackage{multirow}
+\usepackage{colortbl}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\usepackage{titling} % Allows custom title configuration
+
+\newcommand{\HorRule}{\color{DarkGoldenrod} \rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{30}{30}  \color{DarkRed} \selectfont} % Horizontal rule before the title
+
+\title{Τίτλος Αναφοράς} % Your article title
+
+\posttitle{\par\end{flushleft}} % Whitespace under the title
+
+\preauthor{\begin{flushleft}\large  \color{DarkRed}} % Author font configuration
+
+\author{Όνομα Επώνυμο } % Your name
+
+\postauthor{\footnotesize \color{Black} % Configuration for the institution name
+\href{http://www.dit.hua.gr}{Τμήμα Πληροφορικής \& Τηλεματικής} % Your institution
+
+\par\end{flushleft}\HorRule} % Horizontal rule after the title
+
+\date{} % Add a date here if you would like one to appear underneath the title block
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+\thispagestyle{fancy} % Enabling the custom headers/footers for the first page 
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+% The first character should be within \initial{}
+\initial{Ε}\textbf{δώ πηγαίνει η περίληψη. Αυτη η παράγραφος έχει την περίληψη του κειμένου που ακολουθεί. Θα παρατηρήσετε ότι έχει το πρώτο γράμμα κεφαλαίο. }
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+%EPIGRAPH
+\epigraphhead[10]{\epigraph{"UNIX is basically a simple operating system, but you have to be a genius to understand the
+simplicity."}{\textit{\href{http://en.wikipedia.org/wiki/Dennis_Ritchie}{Dennis Ritchie}}}}
+
+\section{Ενότητα 1}
+
+Ας δούμε λίγο κώδικα C.
+
+\begin{lstlisting}
+#include <stdio.h>
+#define READ 0 /* Read end of pipe */
+#define WRITE 1 /* Write end of pipe */
+char *phrase="This is a test phrase";
+
+main() {
+int pid, fd[2], bytes;
+char message[100];
+if (pipe(fd)==-1) {   /*create a pipe*/
+	perror("pipe");
+	exit(1); }
+if ((pid=fork())==-1) {  /*fork a child*/
+	perror("fork");
+	exit(1); }
+if (pid==0) {	/*child writer */
+	close(fd[READ]);	/*close unused end */
+	write(fd[WRITE], phrase, strlen(phrase)+1);
+	close(fd[WRITE]);  }/*close used end */
+else {		/* parent reader */
+	close(fd[WRITE]);	/*close unused end */
+	bytes=read(fd[READ], message, sizeof(message));
+	printf("Read %d bytes : %s\n", bytes, message);
+	close(fd[READ]); }	 /*close used end */
+}
+\end{lstlisting}
+
+
+\section{Ενότητα 2}
+
+Οι υποδοχές (sockets) παρέχουν point-to-point two way communication μεταξύ δυο διεργασιών. Αποτελούν έναν από τους βασικούς τρόπους
+επικοινωνίας μεταξύ διεργασιών, οι οποίες μπορεί να βρίσκονται στο ίδιο μηχάνημα ή ακόμη και σε διαφορετικά. Μια υποδοχή αποτελεί το άκρο
+της επικοινωνίας και το οποίο μπορεί να έχει όνομα. Υπάρχουν διαφορετικοί τύποι υποδοχών.
+
+Οι υποδοχές υπάρχουν μέσα σε «πεδία επικοινωνίας» τα λεγόμενα \emph{communication domains}. Ένα socket domain καθορίζει το περιβάλλον της
+επικοινωνίας, το οποίο παρέχει μια δομή διευθυνσιοδότησης (addressing structure) και ένα σύνολο από πρωτόκολλα.
+
+Τα πιο συνηθισμένα communication domains είναι το \emph{UNIX domain} και το \emph{Internet domain} \footnote{Τα πιο γνωστά communication
+domains είναι: AF\_INET (IPv4 Internet domain) , AF\_INET6 (IPv6 Internet domain), AF\_UNIX (UNIX domain), AF\_UNSPEC (unspecified)}.
+
+\begin{itemize}
+ \item \emph{UNIX domain}: παρέχει διευθυνσιοδότηση υποδοχέων μέσα σε ένα σύστημα. Τα unix domain sockets ονομάζονται με Unix paths. 
+ \item \emph{internet domain}: καθορίζεται από τη IP διεύθυνση του μηχανήματος που το φιλοξενεί και τον αριθμό πόρτας (συνήθως ένας αριθμός
+πάνω από 2000 μέχρι $2^{16}$) 
+\end{itemize}
+
+
+
+
+ 
+Ας δούμε μια εικόνα 
+\begin{figure}[ht] 
+\centering
+\scalebox{0.3}{\includegraphics{latex.png}}
+\caption{Το \LaTeX\ έχει πλάκα!}
+\label{endianess}
+\end{figure}
+
+
+Ας δούμε έναν πίνακα
+
+\begin{center}
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{l|l|l}
+\rowcolor[gray]{0.9}
+  \textbf{Σήμα} & \textbf{Κωδικός} &  \textbf{Περιγραφή} \\
+SIGHUP  &1	&Hang up\\
+SIGINT	&2	& (Ctrl + C)\\
+SIGQUIT	&3	& (Ctrl + \textbackslash)\\
+SIGKILL	&9	&quit immediately\\
+SIGALRM	&14	&Alarm Clock signal (used for timers)\\
+SIGTERM	&15	&Software termination signal \\
+SIGSTOP	&17	&Stop signal\\
+SIGTSTP	&18	& (Ctrl + Z)\\
+SIGCONT	&19	&A stopped process is being continued\\
+\end{tabularx}  
+\caption{τα πιο συνηθισμένα σήματα στο unix} 
+\label{tab:signals}          
+\end{table}
+\end{center}
+
+\end{document}
